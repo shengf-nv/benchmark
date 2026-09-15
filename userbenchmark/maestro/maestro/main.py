@@ -60,7 +60,7 @@ def list_op_presets():
         print(f"- {op_preset.name}")
 
 @cli.command(short_help="Run benchmarks with a config file.")
-@click.option('--config', '-c', type=click.Path(exists=True), required=True, help='Path to pattern/config file.')
+@click.option('--config', '-c', type=click.Path(exists=True,path_type=Path), required=True, help='Path to pattern/config file.')
 def run_benchmark(config: Path):
     """
     Run benchmarks for distributed patterns defined in a configuration file.
