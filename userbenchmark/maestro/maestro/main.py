@@ -151,7 +151,8 @@ def _run_benchmark(config: Path):
 
         root_logger.info(f"Saved results to {config['save_results_to'].absolute()}")
 
-    orchestrator.destroy()
+    # the following call casues a deadlock in some cases, so we comment it out for now.
+    # orchestrator.destroy()
 
     return results_df
 
